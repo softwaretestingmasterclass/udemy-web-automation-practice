@@ -1,0 +1,35 @@
+{
+  "name": "saucedemo-ui-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "pre-commit": [
+    "pre-commit"
+  ],
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "pre-commit": "run-p lint:staged",
+    "lint:staged": "lint-staged",
+    "test": "npx playwright test --reporter=line,allure-playwright",
+    "debug": "npx playwright test --reporter=line --headed --workers=1",
+    "report": "allure generate ./allure-results --clean && allure open ./allure-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^6.0.0-beta.0",
+    "@playwright/test": "^1.19.2",
+    "allure-playwright": "^2.0.0-beta.15",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.25.4",
+    "lint-staged": "^3.3.0",
+    "pre-commit": "^1.2.2"
+  }
+}
