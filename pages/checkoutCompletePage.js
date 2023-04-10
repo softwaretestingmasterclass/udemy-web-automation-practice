@@ -12,6 +12,6 @@ exports.CheckoutCompletePage = class CheckoutCompletePage {
 
   async verifyCheckoutIsComplete() {
     await expect.soft(this.page).toHaveURL(this.URL);
-    await expect.soft(this.header).toHaveText('THANK YOU FOR YOUR ORDER');
+    await expect.soft(this.header).toHaveText('Thank you for your order!');
   }
 };
